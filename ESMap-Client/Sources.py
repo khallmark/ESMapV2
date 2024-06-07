@@ -3,14 +3,14 @@ import json
 import WebClient, Calls
 from os import path
 from datetime import datetime
-
+ 
 missing_parsers = [ ]
 
 # Retreives a list of call sources from a local file
 def getLocalSources(sourcePath):
-
+    filePath = path.join(path.dirname(__file__), sourcePath)
     # Read the file
-    data = open(sourcePath, 'r').readlines()
+    data = open(filePath, 'r').readlines()
 
     i = 1
     sources = { }
@@ -85,7 +85,7 @@ def canCheck(source):
 # Returns the full path to a parser
 def getParserPath(parser):
     if not path.isabs(parser):
-        parser = path.normpath(path.join('parsers', parser))
+        parser = path.normpath(path.join(path.dirname(__file__), 'parsers', parser))
     return parser
 
 # Verifies that a parser file exists
