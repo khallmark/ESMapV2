@@ -1,0 +1,12 @@
+{
+    "files.watcherExclude": {
+        "**/.git/subtree-cache/**": false,
+        "**/pnpm-lock.yaml": true
+    },
+    "search.exclude": {
+        "**/pnpm-lock.yaml": true
+    },
+    "files.exclude": {
+        "**/pnpm-lock.yaml": true
+    }
+}

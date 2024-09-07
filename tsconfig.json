@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "lib": ["ES2022", "ESNext.AsyncIterable"],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "strictPropertyInitialization": false,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "paths": {
+      "@esmapv3/*": ["packages/*/src"]
+    },
+    "strict": true,
+    "noImplicitAny": true,
+    "moduleResolution": "NodeNext"
+  },
+  "exclude": ["node_modules", "dist"]
+}

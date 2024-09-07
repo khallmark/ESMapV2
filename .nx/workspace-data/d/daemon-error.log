@@ -1,0 +1,26 @@
+Daemon process terminated and closed the connection
+
+Messages from the log:
+      'C:\\Users\\khallmark\\source\\repos\\khallmark\\ESMapV2\\node_modules\\.pnpm\\nx@19.6.5\\node_modules\\nx\\src\\project-graph\\plugins\\loader.js',
+      'C:\\Users\\khallmark\\source\\repos\\khallmark\\ESMapV2\\node_modules\\.pnpm\\nx@19.6.5\\node_modules\\nx\\src\\project-graph\\plugins\\isolation\\plugin-worker.js'
+    ]
+  },
+  plugin: '@nrwl/node',
+  name: 'LoadPluginError'
+}
+
+Node.js v20.9.0
+[NX Daemon Server] - 2024-09-07T04:56:52.750Z - Started listening on: \\.\pipe\nx\C:\Users\KHALLM~1\AppData\Local\Temp\169c6f6f72a832e0494e\d.sock
+[NX Daemon Server] - 2024-09-07T04:56:52.752Z - [WATCHER]: Subscribed to changes within: c:\Users\khallmark\source\repos\khallmark\ESMapV2 (native)
+[NX Daemon Server] - 2024-09-07T04:56:52.759Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-07T04:56:52.760Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-09-07T04:56:52.760Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-09-07T04:56:52.761Z - [REQUEST]: Client Request for Project Graph Received
+[NX Daemon Server] - 2024-09-07T04:56:53.084Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-09-07T04:56:53.101Z - Closed a connection. Number of open connections: 0
+[NX Daemon Server] - 2024-09-07T04:56:53.101Z - [WATCHER]: Stopping the watcher for c:\Users\khallmark\source\repos\khallmark\ESMapV2 (sources)
+[NX Daemon Server] - 2024-09-07T04:56:53.101Z - [WATCHER]: Stopping the watcher for c:\Users\khallmark\source\repos\khallmark\ESMapV2 (outputs)
+
+
+
+More information: c:\Users\khallmark\source\repos\khallmark\ESMapV2\.nx\workspace-data\d\daemon.log

@@ -1,0 +1,19 @@
+{
+  "name": "@esmapv3/graphql-schemas",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@esmapv3/types": "workspace:*",
+    "type-graphql": "2.0.0-rc.2"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  },
+  "peerDependencies": {
+    "@esmapv3/types": "workspace:*"
+  }
+}
