@@ -1,5 +1,5 @@
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
@@ -7,36 +7,36 @@ generator client {
   provider = "prisma-client-js"
 }
 
-model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  name      String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-}
-
 model Call {
-  id          Int      @id @default(autoincrement())
-  source      String
-  category    String
-  description String
-  location    String
-  callTime    DateTime
-  closed      DateTime?
-  lat         Float
-  lng         Float
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id       Int      @id @default(autoincrement())
+  source   Source   @relation(fields: [sourceId], references: [id])
+  sourceId Int
+  cid      String
+  category String
+  geoid    Int?
+  meta     Json
+  added    DateTime @default(now())
+  expired  DateTime?
+  geocode  Geocode? @relation(fields: [geoid], references: [id])
 }
 
 model Source {
   id         Int      @id @default(autoincrement())
-  tag        String   @unique
+  tag        String
   url        String
   parser     String
-  updateTime DateTime
-  createdAt  DateTime @default(now())
-  updatedAt  DateTime @updatedAt
+  updateTime DateTime @map("update_time")
+  calls      Call[]
+}
+
+model Geocode {
+  id        Int      @id @default(autoincrement())
+  location  String
+  latitude  Float?
+  longitude Float?
+  resolved  DateTime?
+  results   Json?
+  calls     Call[]
 }
 
 // Add more models as needed

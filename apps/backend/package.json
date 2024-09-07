@@ -3,21 +3,16 @@
   "version": "1.0.0",
   "main": "dist/main.js",
   "scripts": {
-    "start": "node dist/main.js",
     "build": "tsc",
     "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+    "start": "node dist/main.js",
     "test": "jest",
     "test:watch": "jest --watch"
   },
   "dependencies": {
     "@esmapv3/database": "workspace:*",
-    "@esmapv3/graphql-schemas": "workspace:*",
     "@esmapv3/types": "workspace:*",
-    "apollo-server-express": "^3.13.0",
-    "express": "^4.19.2",
-    "graphql": "^16.9.0",
-    "reflect-metadata": "^0.2.2",
-    "type-graphql": "2.0.0-rc.2"
+    "express": "^4.19.2"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",

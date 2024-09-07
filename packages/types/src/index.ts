@@ -1,13 +1,17 @@
 export interface Call {
   id: number;
   source: string;
+  cid: string;
   category: string;
-  description: string;
   location: string;
+  description: string;
   callTime: string;
-  closed: string | null;
-  lat: number;
-  lng: number;
+  closedTime: string | null;
+}
+
+export interface GeocodedCall extends Call {
+  latitude: number;
+  longitude: number;
 }
 
 export interface MapCall {
