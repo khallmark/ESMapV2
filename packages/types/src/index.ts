@@ -25,3 +25,13 @@ export interface Source {
   parser: string;
   updateTime: string;
 }
+
+export interface User {
+  id: number;
+  email: string;
+  name?: string | null;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+// Add more shared types as needed

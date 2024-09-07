@@ -1,20 +1,31 @@
 {
-  "name": "backend",
+  "name": "@esmapv3/backend",
   "version": "1.0.0",
-  "main": "dist/app.js",
+  "main": "dist/main.js",
   "scripts": {
-    "start": "node dist/app.js",
+    "start": "node dist/main.js",
     "build": "tsc",
-    "dev": "ts-node-dev --respawn --transpile-only src/app.ts"
+    "dev": "ts-node-dev --respawn --transpile-only src/main.ts",
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "mysql2": "^2.3.0"
+    "@esmapv3/database": "workspace:*",
+    "@esmapv3/graphql-schemas": "workspace:*",
+    "@esmapv3/types": "workspace:*",
+    "apollo-server-express": "^3.13.0",
+    "express": "^4.19.2",
+    "graphql": "^16.9.0",
+    "reflect-metadata": "^0.2.2",
+    "type-graphql": "2.0.0-rc.2"
   },
   "devDependencies": {
-    "@types/express": "^4.17.13",
-    "@types/node": "^16.11.6",
-    "ts-node-dev": "^1.1.8",
-    "typescript": "^4.4.4"
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^22.5.4",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.5.4"
   }
 }
