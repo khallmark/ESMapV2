@@ -1,0 +1,13 @@
+model calls {
+  id          Int       @id @default(autoincrement())
+  source      Int
+  cid         String    @unique
+  category    String?
+  geoid       Int?
+  added       DateTime  @default(now())
+  expired     DateTime?
+  meta        String
+  // Add fields for latitude and longitude if they exist
+  latitude    Float?
+  longitude   Float?
+}
