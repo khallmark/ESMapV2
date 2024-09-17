@@ -14,7 +14,6 @@ import {
 	Scripts,
 	ScrollRestoration,
 	useLoaderData,
-	useMatches,
 	useSubmit,
 } from '@remix-run/react'
 import { withSentry } from '@sentry/remix'
@@ -24,7 +23,6 @@ import appleTouchIconAssetUrl from './assets/favicons/apple-touch-icon.png'
 import faviconAssetUrl from './assets/favicons/favicon.svg'
 import { GeneralErrorBoundary } from './components/error-boundary.tsx'
 import { EpicProgress } from './components/progress-bar.tsx'
-import { SearchBar } from './components/search-bar.tsx'
 import { useToast } from './components/toaster.tsx'
 import { Button } from './components/ui/button.tsx'
 import {
@@ -36,7 +34,8 @@ import {
 } from './components/ui/dropdown-menu.tsx'
 import { Icon, href as iconsHref } from './components/ui/icon.tsx'
 import { EpicToaster } from './components/ui/sonner.tsx'
-import { ThemeSwitch, useTheme } from './routes/resources+/theme-switch.tsx'
+import { ThemeSwitch } from './routes/resources+/theme-switch.tsx'
+import { useTheme } from './hooks/useTheme.ts'
 import tailwindStyleSheetUrl from './styles/tailwind.css?url'
 import { getUserId, logout } from './utils/auth.server.ts'
 import { ClientHintCheck, getHints } from './utils/client-hints.tsx'
@@ -193,64 +192,56 @@ function App() {
 	const nonce = useNonce()
 	const user = useOptionalUser()
 	const theme = useTheme()
-	const matches = useMatches()
-	const isOnSearchPage = matches.find((m) => m.id === 'routes/users+/index')
-	const searchBar = isOnSearchPage ? null : <SearchBar status="idle" />
 	const allowIndexing = data.ENV.ALLOW_INDEXING !== 'false'
 	useToast(data.toast)
+
+	const themeClass = theme === 'dark' ? 'dark' : 'light'
 
 	return (
 		<Document
 			nonce={nonce}
-			theme={theme}
+			theme={themeClass}
 			allowIndexing={allowIndexing}
 			env={data.ENV}
 		>
-			<div className="flex h-screen flex-col justify-between">
-				<header className="container py-6">
-					<nav className="flex flex-wrap items-center justify-between gap-4 sm:flex-nowrap md:gap-8">
-						<Logo />
-						<div className="ml-auto hidden max-w-sm flex-1 sm:block">
-							{searchBar}
-						</div>
-						<div className="flex items-center gap-10">
+			<div className={`flex flex-col h-screen ${themeClass}`}>
+				<header className="bg-header-bg-light dark:bg-header-bg-dark">
+					<div className="container mx-auto flex justify-between items-center py-4">
+						<h1 className="text-white text-2xl font-bold">ESMap TSX</h1>
+						<div className="flex items-center gap-4">
 							{user ? (
 								<UserDropdown />
 							) : (
-								<Button asChild variant="default" size="lg">
+								<Button asChild variant="default" size="sm" className="text-white">
 									<Link to="/login">Log In</Link>
 								</Button>
 							)}
+							<ThemeSwitch userPreference={theme} />
 						</div>
-						<div className="block w-full sm:hidden">{searchBar}</div>
+					</div>
+					<nav className="bg-menu-bg-light dark:bg-menu-bg-dark">
+						<ul className="container mx-auto flex">
+							<li>
+								<Link to="/map" className="block text-white py-3 px-4 hover:bg-menu-hover-light dark:hover:bg-menu-hover-dark">
+									Live Map
+								</Link>
+							</li>
+							<li>
+								<Link to="/list" className="block text-white py-3 px-4 hover:bg-menu-hover-light dark:hover:bg-menu-hover-dark">
+									Call List
+								</Link>
+							</li>
+							{/* Add more menu items as needed */}
+						</ul>
 					</nav>
 				</header>
-
-				<div className="flex-1">
+				<main className="flex-grow">
 					<Outlet />
-				</div>
-
-				<div className="container flex justify-between pb-5">
-					<Logo />
-					<ThemeSwitch userPreference={data.requestInfo.userPrefs.theme} />
-				</div>
+				</main>
 			</div>
-			<EpicToaster closeButton position="top-center" theme={theme} />
+			<EpicToaster closeButton position="top-center" theme={themeClass} />
 			<EpicProgress />
 		</Document>
-	)
-}
-
-function Logo() {
-	return (
-		<Link to="/" className="group grid leading-snug">
-			<span className="font-light transition group-hover:-translate-x-1">
-				epic
-			</span>
-			<span className="font-bold transition group-hover:translate-x-1">
-				notes
-			</span>
-		</Link>
 	)
 }
 
@@ -277,7 +268,7 @@ function UserDropdown() {
 						to={`/users/${user.username}`}
 						// this is for progressive enhancement
 						onClick={(e) => e.preventDefault()}
-						className="flex items-center gap-2"
+						className="flex items-center gap-2 text-white"
 					>
 						<img
 							className="h-8 w-8 rounded-full object-cover"

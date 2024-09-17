@@ -167,3 +167,45 @@ model Connection {
 
   @@unique([providerName, providerId])
 }
+
+model Call {
+  id       Int       @id @default(autoincrement())
+  source   Source    @relation(fields: [sourceId], references: [id])
+  sourceId Int
+  cid      String    @unique
+  category String?
+  geocode  Geocode?  @relation(fields: [geoid], references: [id])
+  geoid    Int?
+  added    DateTime  @default(now())
+  expired  DateTime?
+  meta     String
+
+  @@map("calls")
+}
+
+model Source {
+  id          Int     @id @default(autoincrement())
+  tag         String
+  url         String
+  parser      String
+  update_time Int
+  bounds      String?
+  time_zone   String?
+  time_format String
+  calls       Call[]
+
+  @@map("sources")
+}
+
+model Geocode {
+  id        Int       @id @default(autoincrement())
+  location  String    @unique
+  latitude  Float?
+  longitude Float?
+  added     DateTime  @default(now())
+  resolved  DateTime?
+  results   String?
+  calls     Call[]
+
+  @@map("geocodes")
+}

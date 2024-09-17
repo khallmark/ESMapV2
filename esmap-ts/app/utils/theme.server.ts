@@ -1,19 +1,35 @@
-import * as cookie from 'cookie'
+import { createCookieSessionStorage } from '@remix-run/node'
 
-const cookieName = 'en_theme'
 export type Theme = 'light' | 'dark'
 
-export function getTheme(request: Request): Theme | null {
-	const cookieHeader = request.headers.get('cookie')
-	const parsed = cookieHeader ? cookie.parse(cookieHeader)[cookieName] : 'light'
-	if (parsed === 'light' || parsed === 'dark') return parsed
-	return null
+const themeStorage = createCookieSessionStorage({
+	cookie: {
+		name: 'theme',
+		secure: true,
+		secrets: ['s3cr3t'],
+		sameSite: 'lax',
+		path: '/',
+		httpOnly: true,
+	},
+})
+
+export async function getTheme(request: Request): Promise<Theme | null> {
+	const session = await themeStorage.getSession(request.headers.get('Cookie'))
+	const theme = session.get('theme')
+	if (theme === 'light' || theme === 'dark') {
+		return theme
+	}
+	return null // This will indicate that the system preference should be used
 }
 
-export function setTheme(theme: Theme | 'system') {
-	if (theme === 'system') {
-		return cookie.serialize(cookieName, '', { path: '/', maxAge: -1 })
+export async function setTheme(theme: Theme | null) {
+	const session = await themeStorage.getSession()
+	if (theme) {
+		session.set('theme', theme)
 	} else {
-		return cookie.serialize(cookieName, theme, { path: '/', maxAge: 31536000 })
+		session.unset('theme')
 	}
+	return themeStorage.commitSession(session, {
+		expires: new Date('2100-01-01'),
+	})
 }

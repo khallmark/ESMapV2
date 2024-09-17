@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"name": "esmap-ts",
+			"path": "esmap-ts"
+		},
+		{
+			"name": "ESMapV2",
+			"path": "."
+		}
+	],
+	"settings": {
+		"typescript.tsdk": "esmap-ts\\node_modules\\typescript\\lib"
+	}
+}

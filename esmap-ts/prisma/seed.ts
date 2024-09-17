@@ -21,18 +21,15 @@ async function seed() {
 	console.timeEnd('🧹 Cleaned up the database...')
 
 	console.time('🔑 Created permissions...')
-	const entities = ['user', 'note']
+	const entities = ['user', 'note', 'call', 'source', 'geocode']
 	const actions = ['create', 'read', 'update', 'delete']
 	const accesses = ['own', 'any'] as const
 
-	let permissionsToCreate = []
-	for (const entity of entities) {
-		for (const action of actions) {
-			for (const access of accesses) {
-				permissionsToCreate.push({ entity, action, access })
-			}
-		}
-	}
+	const permissionsToCreate = entities.flatMap(entity =>
+		actions.flatMap(action =>
+			accesses.map(access => ({ entity, action, access }))
+		)
+	)
 	await prisma.permission.createMany({ data: permissionsToCreate })
 	console.timeEnd('🔑 Created permissions...')
 
@@ -60,6 +57,61 @@ async function seed() {
 		},
 	})
 	console.timeEnd('👑 Created roles...')
+
+	console.time('🚨 Created sources...')
+	const sources = [
+		{
+			tag: 'OPD',
+			url: 'https://example.com/opd',
+			parser: 'OPDParser',
+			update_time: 300,
+			bounds: '28.4,-81.4,28.6,-81.2',
+			time_zone: 'America/New_York',
+			time_format: 'MM/DD/YYYY HH:mm:ss',
+		},
+		{
+			tag: 'OCSO',
+			url: 'https://example.com/ocso',
+			parser: 'OCSOParser',
+			update_time: 600,
+			bounds: '28.3,-81.5,28.7,-81.1',
+			time_zone: 'America/New_York',
+			time_format: 'YYYY-MM-DD HH:mm:ss',
+		},
+	]
+	await prisma.source.createMany({ data: sources })
+	console.timeEnd('🚨 Created sources...')
+
+	console.time('📍 Created geocodes...')
+	const geocodes = [
+		{ location: '123 Main St, Orlando, FL', latitude: 28.5383, longitude: -81.3792 },
+		{ location: '456 Oak Ave, Orlando, FL', latitude: 28.5558, longitude: -81.3789 },
+	]
+	await prisma.geocode.createMany({ data: geocodes })
+	console.timeEnd('📍 Created geocodes...')
+
+	console.time('📞 Created calls...')
+	const createdSources = await prisma.source.findMany()
+	const createdGeocodes = await prisma.geocode.findMany()
+	
+	const calls = [
+		{
+			sourceId: createdSources[0].id,
+			cid: 'OPD-001',
+			category: 'Traffic Stop',
+			geoid: createdGeocodes[0].id,
+			meta: JSON.stringify({ description: 'Routine traffic stop', officer: 'John Doe' }),
+		},
+		{
+			sourceId: createdSources[1].id,
+			cid: 'OCSO-001',
+			category: 'Noise Complaint',
+			geoid: createdGeocodes[1].id,
+			meta: JSON.stringify({ description: 'Loud music reported', caller: 'Anonymous' }),
+		},
+	]
+	await prisma.call.createMany({ data: calls })
+	console.timeEnd('📞 Created calls...')
 
 	const totalUsers = 5
 	console.time(`👤 Created ${totalUsers} users...`)
@@ -176,7 +228,7 @@ async function seed() {
 						id: '260366b1',
 						title: 'Not bears',
 						content:
-							"Although you may have heard people call them koala 'bears', these awesome animals aren’t bears at all – they are in fact marsupials. A group of mammals, most marsupials have pouches where their newborns develop.",
+							"Although you may have heard people call them koala 'bears', these awesome animals aren't bears at all – they are in fact marsupials. A group of mammals, most marsupials have pouches where their newborns develop.",
 					},
 					{
 						id: 'bb79cf45',

@@ -1,0 +1,493 @@
+{
+	"updated": 1726542414,
+	"calls": {
+		"4559662": [
+			28.528197,
+			-81.420715,
+			"Battery - shooting @ 1100 BLOCK BETHUNE DR",
+			"Police"
+		],
+		"4559663": [
+			28.541998,
+			-81.390526,
+			"Suspicious person @ W CENTRAL BLVD / GLENN LN",
+			"Police"
+		],
+		"4559664": [
+			28.461098,
+			-81.466675,
+			"General disturbance @ 6300 BLOCK INTERNATIONAL DR",
+			"Police"
+		],
+		"4559665": [
+			28.541998,
+			-81.390526,
+			"Drug violation @ W CENTRAL BLVD / GLENN LN",
+			"Police"
+		],
+		"4559666": [
+			28.473756,
+			-81.43924,
+			"Suspicious vehicle @ 5800 BLOCK RIDGE CLUB LOOP",
+			"Police"
+		],
+		"4559668": [
+			28.431664,
+			-81.309608,
+			"General disturbance @ 9200 BLOCK JEFF FUQUA BLVD",
+			"Police"
+		],
+		"4559669": [
+			28.55521,
+			-81.412674,
+			"House/business check @ 2600 BLOCK TECHNOLOGY DR",
+			"Patrol"
+		],
+		"4559670": [
+			28.51049,
+			-81.459137,
+			"Accident (minor) @ S KIRKMAN RD / ARNOLD PALMER DR",
+			"Traffic"
+		],
+		"4559671": [
+			28.431175,
+			-81.30648,
+			"Suspicious incident @ 9300 BLOCK JEFF FUQUA BLVD",
+			"Police"
+		],
+		"4559672": [
+			28.572854,
+			-81.369637,
+			"Check the well being of @ 600 BLOCK E ROLLINS ST",
+			"Police"
+		],
+		"4559673": [
+			28.553327,
+			-81.347908,
+			"Suspicious person @ N PRIMROSE DR / E COLONIAL DR",
+			"Police"
+		],
+		"4559674": [
+			28.552766,
+			-81.334023,
+			"House/business check @ 4100 BLOCK E COLONIAL DR",
+			"Patrol"
+		],
+		"4559675": [
+			28.478614,
+			-81.439651,
+			"Noise ordinance violation @ 5000 BLOCK MILLENIA BLVD",
+			"Police"
+		],
+		"4559676": [
+			28.500448,
+			-81.459106,
+			"Accident with road blockage @ S KIRKMAN RD / PINE SHADOWS PKWY",
+			"Traffic"
+		],
+		"4559678": [
+			28.520137,
+			-81.332161,
+			"Accident with road blockage @ 1900 BLOCK CONWAY RD",
+			"Traffic"
+		],
+		"4559679": [
+			28.480613,
+			-81.310226,
+			"Accident (injuries) @ S SEMORAN BLVD / HOFFNER AVE",
+			"Traffic"
+		],
+		"4559680": [
+			28.431175,
+			-81.30648,
+			"Trespasser @ 9300 BLOCK JEFF FUQUA BLVD",
+			"Police"
+		],
+		"4559682": [
+			28.56502,
+			-81.389702,
+			"Trespasser @ 1500 BLOCK EDGEWATER DR",
+			"Police"
+		],
+		"4559683": [
+			28.430731,
+			-81.311333,
+			"Check the well being of @ 9400 BLOCK JEFF FUQUA BLVD",
+			"Police"
+		],
+		"4559684": [
+			28.515623,
+			-81.289803,
+			"House/business check @ 2300 BLOCK S GOLDENROD RD",
+			"Patrol"
+		],
+		"4559685": [
+			28.431175,
+			-81.30648,
+			"Weapons/armed @ 9300 BLOCK JEFF FUQUA BLVD",
+			"Police"
+		],
+		"4575015": [
+			28.68934,
+			-81.463226,
+			"Vehicle Crash @ HEATHER BRITE CIR [531] x[CANTERCLUB TRL]",
+			"Traffic"
+		],
+		"4575095": [
+			28.560381,
+			-81.306473,
+			"Trespasser @ [5923 - 6140] E COLONIAL DRIVE",
+			"Police"
+		],
+		"4575155": [
+			28.58698,
+			-81.445297,
+			"Vehicle Crash w/ Injuries @ TAM DR x[LEPRECHAUN WAY]",
+			"Traffic"
+		],
+		"4575220": [
+			28.56869,
+			-81.224007,
+			"Hit And Run Crash @ E COLONIAL DR x[ROUSE RD]",
+			"Traffic"
+		],
+		"4575231": [
+			28.58289,
+			-81.329918,
+			"Public Service @ 1111 S LAKEMONT AVE",
+			"FireGeneral"
+		],
+		"4575256": [
+			28.480515,
+			-81.33078,
+			"Drunk Driver @ HOFFNER AVE/CONWAY ROAD S",
+			"Police"
+		],
+		"4575301": [
+			28.357449,
+			-81.490913,
+			"Battery O/W 1/2 Goa @ [8100 - 8399] WORLD CENTER DRIVE",
+			"Police"
+		],
+		"4575336": [
+			28.450734,
+			-81.389091,
+			"Medical Emergency @ W SAND LAKE RD",
+			"EMS"
+		],
+		"4575339": [
+			28.484528,
+			-81.409233,
+			"Vehicle Crash @ S TEXAS AVE/TRAIL BLAZER BLVD",
+			"Police"
+		],
+		"4575341": [
+			28.474336,
+			-81.400909,
+			"Medical Emergency @ S RIO GRANDE AVE",
+			"EMS"
+		],
+		"4575353": [
+			28.5775,
+			-81.476089,
+			"Vehicle Crash @ SILVER STAR ROAD/N HIAWASSEE ROAD",
+			"Police"
+		],
+		"4575354": [
+			28.596152,
+			-81.467873,
+			"Vehicle Crash @ N POWERS DRIVE/NORTH LANE",
+			"Police"
+		],
+		"4575358": [
+			28.57498,
+			-81.372047,
+			"Missing Person @ [601 - 698] E ROLLINS STREET",
+			"Police"
+		],
+		"4575360": [
+			28.357677,
+			-81.486626,
+			"Hit And Run Crash @ 7207 CROSSROADS GARDEN DR",
+			"Traffic"
+		],
+		"4575364": [
+			28.435037,
+			-81.472374,
+			"Medical Emergency @ INTERNATIONAL DR",
+			"EMS"
+		],
+		"4575365": [28.575382, -81.527847, "Medical Emergency @ 2ND ST", "EMS"],
+		"4575372": [
+			28.390612,
+			-81.39959,
+			"Verbal All 10-12 @ [2210 - 2399] LAUREL PINE LANE",
+			"Police"
+		],
+		"4575374": [
+			28.60522,
+			-81.519417,
+			"Medical Emergency @ TERRA VERDE WAY",
+			"EMS"
+		],
+		"4575375": [
+			28.59615,
+			-81.467903,
+			"Vehicle Crash @ POWERS DR N x[NORTH LN]",
+			"Traffic"
+		],
+		"4575377": [
+			28.544049,
+			-81.253296,
+			"Petit Theft @ [100 - 129] GRANDE VALENCIA DRIVE",
+			"Police"
+		],
+		"4575379": [28.546799, -81.315796, "Medical Emergency @ BROSCHE RD", "EMS"],
+		"4575380": [
+			28.40777,
+			-81.424957,
+			"Vehicle Crash @ S JOHN YOUNG PKWY x[LAZLO LN]",
+			"Traffic"
+		],
+		"4575382": [
+			28.474692,
+			-81.409103,
+			"Susp Incident @ [5701 - 5726] STONERIDGE COURT",
+			"Police"
+		],
+		"4575385": [
+			28.379174,
+			-81.49115,
+			"Agg Battery O/W @ [8100 - 8199] BALDWIN MANOR COURT",
+			"Police"
+		],
+		"4575387": [28.613467, -81.461967, "Medical Emergency @ RANIER DR", "EMS"],
+		"4575390": [
+			28.612331,
+			-81.464966,
+			"Rescue/Medical Only @ [6100 - 6299] RANIER DRIVE",
+			"EMS"
+		],
+		"4575394": [
+			28.379359,
+			-81.504875,
+			"Medical Emergency @ STATE ROAD 535",
+			"EMS"
+		],
+		"4575396": [
+			28.412142,
+			-81.238167,
+			"Residential Fire @ 10238 FALCON PARC BLVD",
+			"Fire"
+		],
+		"4575397": [
+			28.468971,
+			-81.310089,
+			"Traffic Collision @ LEEVISTA BLVD & S SEMORAN BLVD",
+			"Traffic"
+		],
+		"4575398": [
+			28.542228,
+			-81.266281,
+			"Susp Incident @ [101 - 398] CHUTNEY DRIVE",
+			"Police"
+		],
+		"4575399": [
+			28.5534,
+			-81.327271,
+			"Traffic Collision @ LAKE BALDWIN LN & E COLONIAL DR",
+			"Traffic"
+		],
+		"4575402": [
+			28.577532,
+			-81.491096,
+			"Animal Calls @ SILVER STAR ROAD/N APOPKA VINELAND ROAD",
+			"Police"
+		],
+		"4575403": [
+			28.570214,
+			-81.459976,
+			"General Dist @ [5800 - 5899] HORNET DRIVE",
+			"Police"
+		],
+		"4575405": [
+			28.592624,
+			-81.177689,
+			"Susp Incident @ [14021 - 14198] DEEP LAKE DRIVE",
+			"Police"
+		],
+		"4575406": [
+			28.475236,
+			-81.473145,
+			"Medical Emergency @ TURKEY LAKE RD",
+			"EMS"
+		],
+		"4575407": [
+			28.539296,
+			-81.252625,
+			"Traffic Collision @ LAKE UNDERHILL RD & S ECONLOCKHATCHEE",
+			"Traffic"
+		],
+		"4575408": [
+			28.516231,
+			-81.397102,
+			"Medical Emergency @ S ORANGE BLOSSOM TRL",
+			"EMS"
+		],
+		"4575409": [
+			28.565316,
+			-81.169868,
+			"Citizen Assist @ FRANK STREET/E COLONIAL DRIVE",
+			"Police"
+		],
+		"4575410": [
+			28.485062,
+			-81.407257,
+			"911 Emergency @ [1900 - 1913] CABO SAN LUCAS DRIVE",
+			"Police"
+		],
+		"4575411": [28.614141, -81.406502, "Medical Emergency @ MOAT CT", "EMS"],
+		"4575412": [
+			28.634653,
+			-81.37455,
+			"Medical Emergency @ VISTA TRELAGO",
+			"EMS"
+		],
+		"4575413": [28.502238, -81.311501, "Medical Emergency @ HICKEY DR", "EMS"],
+		"4575414": [28.352691, -81.500961, "Medical Emergency @ GLOBAL CIR", "EMS"],
+		"4575415": [
+			28.45237,
+			-81.338791,
+			"Medical Emergency @ DAETWYLER DR",
+			"EMS"
+		],
+		"4575416": [
+			28.539273,
+			-81.252625,
+			"Vehicle Crash @ LAKE UNDERHILL ROAD/S ECONLOCKHATCHEE TRL",
+			"Police"
+		],
+		"4575417": [
+			28.453097,
+			-81.33828,
+			"Verbal Disturb @ [7921 - 7950] DAETWYLER DRIVE",
+			"Police"
+		],
+		"4575418": [
+			28.364621,
+			-81.422913,
+			"Susp Incident @ [13801 - 13998] EGRET TOWER DRIVE",
+			"Police"
+		],
+		"4575419": [
+			28.386612,
+			-81.480675,
+			"Medical Emergency @ INTERNATIONAL DR",
+			"EMS"
+		],
+		"4575420": [
+			28.559775,
+			-81.488983,
+			"Standby @ [7300 - 7399] CABOR COURT",
+			"Police"
+		],
+		"4575421": [
+			28.562267,
+			-81.194931,
+			"Medical Emergency @ WOODBURY RD",
+			"EMS"
+		],
+		"4575422": [
+			28.5544,
+			-81.327271,
+			"Vehicle Crash w/ Injuries @ HARGRAVE ST x[LAKE BALDWIN LN]",
+			"Traffic"
+		],
+		"4575423": [
+			28.408747,
+			-81.650269,
+			"Fire Alarm @ 13446 SAGESTONE DR",
+			"FireGeneral"
+		],
+		"4575424": [
+			28.558368,
+			-81.478683,
+			"Parking Viol @ [1500 - 1599] STANBURY DRIVE",
+			"Police"
+		],
+		"4575425": [28.522709, -81.3955, "Medical Emergency @ 18TH ST", "EMS"],
+		"4575426": [
+			28.53929,
+			-81.252609,
+			"Vehicle Crash w/ Injuries And Roadblock @ LAKE UNDERHILL RD x[ECONLOCKHATCHEE TRL S]",
+			"Traffic"
+		],
+		"4575427": [
+			28.468414,
+			-81.481895,
+			"Medical Emergency @ FARINGTON CT",
+			"EMS"
+		],
+		"4575428": [
+			28.587752,
+			-81.446007,
+			"Medical Emergency @ LEPRECHAUN WAY",
+			"EMS"
+		],
+		"4575431": [28.382182, -81.488281, "Medical Emergency @ NEWPORT LN", "EMS"],
+		"4575432": [
+			28.539296,
+			-81.252625,
+			"Medical Emergency @ LAKE UNDERHILL RD & S ECONLOCKHATCHEE",
+			"EMS"
+		],
+		"4575433": [
+			28.531117,
+			-81.397125,
+			"Medical Emergency @ S ORANGE BLOSSOM TRL & W GORE ST",
+			"EMS"
+		],
+		"4575434": [
+			28.504118,
+			-81.073547,
+			"Fire Alarm @ 20446 NETTLETON ST",
+			"FireGeneral"
+		],
+		"4575435": [
+			28.350072,
+			-81.646263,
+			"Traffic Collision @ AVALON RD & ARROWHEAD",
+			"Traffic"
+		],
+		"4575436": [
+			28.603369,
+			-81.235191,
+			"Medical Emergency @ SUNTREE BLVD",
+			"EMS"
+		],
+		"4575437": [
+			28.568288,
+			-81.219971,
+			"Medical Emergency @ RETREAT AVE",
+			"EMS"
+		],
+		"4575439": [
+			28.531118,
+			-81.397133,
+			"Citizen Assist @ S ORANGE BLOSSOM TRL/W GORE STREET",
+			"Police"
+		],
+		"4575440": [
+			28.606292,
+			-81.393684,
+			"Susp Vehicle @ [900 - 1099] LEE ROAD",
+			"Police"
+		],
+		"4575443": [
+			28.520524,
+			-81.485924,
+			"Medical Emergency @ BLACK BULL LN",
+			"EMS"
+		]
+	}
+}

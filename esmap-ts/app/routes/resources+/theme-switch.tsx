@@ -6,13 +6,12 @@ import { redirect, useFetcher, useFetchers } from '@remix-run/react'
 import { ServerOnly } from 'remix-utils/server-only'
 import { z } from 'zod'
 import { Icon } from '#app/components/ui/icon.tsx'
-import { useHints } from '#app/utils/client-hints.tsx'
 import { useRequestInfo } from '#app/utils/request-info.ts'
 import { type Theme, setTheme } from '#app/utils/theme.server.ts'
+import { useHints } from '#app/utils/client-hints.tsx'
 
 const ThemeFormSchema = z.object({
-	theme: z.enum(['system', 'light', 'dark']),
-	// this is useful for progressive enhancement
+	theme: z.enum(['light', 'dark', 'system']),
 	redirectTo: z.string().optional(),
 })
 
@@ -27,7 +26,7 @@ export async function action({ request }: ActionFunctionArgs) {
 	const { theme, redirectTo } = submission.value
 
 	const responseInit = {
-		headers: { 'set-cookie': setTheme(theme) },
+		headers: { 'set-cookie': await setTheme(theme === 'system' ? null : theme) },
 	}
 	if (redirectTo) {
 		return redirect(redirectTo, responseInit)
@@ -39,7 +38,7 @@ export async function action({ request }: ActionFunctionArgs) {
 export function ThemeSwitch({
 	userPreference,
 }: {
-	userPreference?: Theme | null
+	userPreference: Theme | null
 }) {
 	const fetcher = useFetcher<typeof action>()
 	const requestInfo = useRequestInfo()
@@ -51,8 +50,8 @@ export function ThemeSwitch({
 
 	const optimisticMode = useOptimisticThemeMode()
 	const mode = optimisticMode ?? userPreference ?? 'system'
-	const nextMode =
-		mode === 'system' ? 'light' : mode === 'light' ? 'dark' : 'system'
+	const nextMode = mode === 'system' ? 'light' : mode === 'light' ? 'dark' : 'system'
+
 	const modeLabel = {
 		light: (
 			<Icon name="sun">
@@ -86,7 +85,7 @@ export function ThemeSwitch({
 			<div className="flex gap-2">
 				<button
 					type="submit"
-					className="flex h-8 w-8 cursor-pointer items-center justify-center"
+					className="flex h-8 w-8 cursor-pointer items-center justify-center text-white hover:bg-white/10 rounded-full transition-colors"
 				>
 					{modeLabel[mode]}
 				</button>
@@ -95,37 +94,21 @@ export function ThemeSwitch({
 	)
 }
 
-/**
- * If the user's changing their theme mode preference, this will return the
- * value it's being changed to.
- */
-export function useOptimisticThemeMode() {
+export function useOptimisticThemeMode(): Theme | null {
 	const fetchers = useFetchers()
 	const themeFetcher = fetchers.find(
 		(f) => f.formAction === '/resources/theme-switch',
 	)
 
+	const hints = useHints()
 	if (themeFetcher && themeFetcher.formData) {
 		const submission = parseWithZod(themeFetcher.formData, {
 			schema: ThemeFormSchema,
 		})
-
+		
 		if (submission.status === 'success') {
-			return submission.value.theme
+			return submission.value.theme === 'system' ? hints.theme : submission.value.theme
 		}
 	}
-}
-
-/**
- * @returns the user's theme preference, or the client hint theme if the user
- * has not set a preference.
- */
-export function useTheme() {
-	const hints = useHints()
-	const requestInfo = useRequestInfo()
-	const optimisticMode = useOptimisticThemeMode()
-	if (optimisticMode) {
-		return optimisticMode === 'system' ? hints.theme : optimisticMode
-	}
-	return requestInfo.userPrefs.theme ?? hints.theme
+	return hints.theme
 }
