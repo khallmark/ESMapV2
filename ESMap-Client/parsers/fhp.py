@@ -7,6 +7,8 @@
     Updated to support the new ARCGIS system.
 '''
 
+import json
+
 dataObj = json.loads(data)
 
 for incident in dataObj["features"]:
